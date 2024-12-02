@@ -16,6 +16,30 @@
             font-family: "Nunito Sans", sans-serif;
             font-optical-sizing: auto;
         }
+        /* card */
+        .hidden-text {
+            position: absolute;
+            bottom: -100%; 
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            opacity: 0; 
+            transition: all 0.4s ease-in-out; 
+        }
+
+        .col-span-1:hover .hidden-text {
+            bottom: 0; 
+            opacity: 1; 
+        }
+
+        .card-overlay {
+            transition: background-color 0.1s ease-in-out; 
+        }
+
+        .text-content {
+            text-align: center;
+            padding: 0 20px;
+        }
     </style>
 </head>
 <body>
@@ -49,7 +73,192 @@
         <p class="text-[15px] text-black leading-7">A huge skilled manpower demand and supply gap prevails in the different spheres of the healthcare domain. At Desun Academy Employability training identifies student’s job-ready skills, combines them with improved self-awareness, and prepares them for their job search. On completion of the course the students develop required skills and knowledge to walk into a workplace for the first time and make a good impression. They learn essential skills such as communication, decision making and problem solving. They also learn about interviews and resume writing.</p>
         <p class="text-[24px] text-[#084d89] font-bold mt-10">Managerial Skill</p>
         <hr class="w-16 h-[3px] mb-3 bg-[#f7a703] border-0 rounded">
-        <p class="text-[15px] text-black leading-7">Managing in today’s fast & constantly changing environment demands specific management skills & attributes to achieve success. Our training will develop a proactive customer-focused orientation. Learn to lead with vision, motivate & empower with passion, facilitate effective communication & delegate with clarity to individual and teams. The core focus will revolve core management behaviours and techniques to deliver results.</p>
+        <p class="text-[15px] text-black leading-7">Managing in today's fast & constantly changing environment demands specific management skills & attributes to achieve success. Our training will develop a proactive customer-focused orientation. Learn to lead with vision, motivate & empower with passion, facilitate effective communication & delegate with clarity to individual and teams. The core focus will revolve core management behaviours and techniques to deliver results.</p>
+        <!-- Industry starts -->
+        <div>
+            <p class="text-[30px] text-[#f77403] font-bold mt-10">INDUSTRY READY SKILL</p>
+            <hr class="w-16 h-[3px] mb-3 bg-[#084d89] border-0 rounded">
+            <div class="grid grid-cols-3 gap-8 mt-14">
+                <div class="col-span-1 card overflow-clip">
+                    <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/time-management.jpg');">
+                        <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
+                        <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
+                            <div class="py-28">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Time Management</h1>
+                            </div>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-center w-full h-full hidden-text bg-[#115087]">
+                            <div class="text-content">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Time Management</h1>
+                                <p class="text-[15px] text-white">Time is a resource and you can't get it back one lost, Hence it's important for students to understand the difference between efficiency and effectiveness when managing their time at work place.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 card overflow-clip">
+                    <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/Conflict-Resolution.jpg');">
+                        <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
+                        <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
+                            <div class="py-28">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Conflict Resolution</h1>
+                            </div>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-center w-full h-full hidden-text bg-[#EC8E27]">
+                            <div class="text-content">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Conflict Resolution</h1>
+                                <p class="text-[15px] text-white">Conflict is a consistent and unavoidable issue within healthcare industry. By resolving conflicts in a more professional and respectful manner, students are enabled to collaborate better with co-workers & associates. Conflict resolution skillsets are most essential for the healthcare industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 card overflow-clip">
+                    <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/Managing-Change.jpg');">
+                        <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
+                        <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
+                            <div class="py-28">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Managing Change</h1>
+                            </div>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-center w-full h-full hidden-text bg-[#2A1C13]">
+                            <div class="text-content">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Managing Change</h1>
+                                <p class="text-[15px] text-white">It's the need of the hour that professionals are well-versed in change management, and that they can quickly adapt in response to new ideas, circumstances, requirements & other changes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 card overflow-clip">
+                    <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/Presenting.jpg');">
+                        <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
+                        <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
+                            <div class="py-28">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Presenting</h1>
+                            </div>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-center w-full h-full hidden-text bg-[#902D8C]">
+                            <div class="text-content">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Presenting</h1>
+                                <p class="text-[15px] text-white">Knowing how to use PowerPoint is not enough - you need to understand how to present information in a clear and engaging way that leads to action.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 card overflow-clip">
+                    <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/Emotional-Intelligence.jpg');">
+                        <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
+                        <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
+                            <div class="py-28">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Emotional Intelligence</h1>
+                            </div>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-center w-full h-full hidden-text bg-[#DF2476]">
+                            <div class="text-content">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Emotional Intelligence</h1>
+                                <p class="text-[15px] text-white">To serve better, developing EQ is becoming increasingly important - This is how a student understands himself / herself  and others, so one can better manage relationships with team & customer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 card overflow-clip">
+                    <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/Complex-Problem-Solving.jpg');">
+                        <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
+                        <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
+                            <div class="py-28">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Problem Solving</h1>
+                            </div>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-center w-full h-full hidden-text bg-[#8088BA]">
+                            <div class="text-content">
+                                <h1 class="text-[26px] font-extrabold text-white mb-3">Problem Solving</h1>
+                                <p class="text-[15px] text-white">Problem-solving skills develop the ability to identify a problem, determine its cause, and figure out all possible solutions to solve the problem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                <div class="col-span-1"></div>
+            </div>
+        </div>
+        <!-- Industry ends -->
+        <div>
+            <p class="text-[30px] text-[#f77403] font-bold mt-10">CORE EMPLOYABILITY SKILLS</p>
+            <hr class="w-16 h-[3px] mb-3 bg-[#084d89] border-0 rounded">
+            <div class="py-6">
+                <div class="grid grid-cols-4 gap-8">
+                    <div class="col-span-1 flex justify-center">
+                        <div class="px-14">
+                            <div class="bg-[#FA911E] rounded-full w-[150px] h-[150px] flex justify-center items-center">
+                                <img src="src/img/Sales-Training.png" alt="" class="w-24">
+                            </div>
+                            <p class="text-[15px] text-black text-center pt-3">Sales Training</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <div class="px-14">
+                            <div class="bg-[#01AAAD] rounded-full w-[150px] h-[150px] flex justify-center items-center">
+                                <img src="src/img/Service-Training.png" alt="" class="w-24">
+                            </div>
+                            <p class="text-[15px] text-black text-center pt-3">Service Training</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <div class="px-14">
+                            <div class="bg-[#93268F] rounded-full w-[150px] h-[150px] flex justify-center items-center">
+                                <img src="src/img/Soft-Skills-Training.png" alt="" class="w-24">
+                            </div>
+                            <p class="text-[15px] text-black text-center pt-3">Soft Skills Training</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <div class="px-14">
+                            <div class="bg-[#ED1E79] rounded-full w-[150px] h-[150px] flex justify-center items-center">
+                                <img src="src/img/Product-Training.png" alt="" class="w-24">
+                            </div>
+                            <p class="text-[15px] text-black text-center pt-3">Product Training</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <div class="px-14">
+                            <div class="bg-[#545F9D] rounded-full w-[150px] h-[150px] flex justify-center items-center">
+                                <img src="src/img/Process-Training.png" alt="" class="w-24">
+                            </div>
+                            <p class="text-[15px] text-black text-center pt-3">Process Training</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <div class="px-14">
+                            <div class="bg-[#DB3E6D] rounded-full w-[150px] h-[150px] flex justify-center items-center">
+                                <img src="src/img/Leadeship-Training.png" alt="" class="w-24">
+                            </div>
+                            <p class="text-[15px] text-black text-center pt-3">Leadership Training</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <div class="px-14">
+                            <div class="bg-[#FCB30F] rounded-full w-[150px] h-[150px] flex justify-center items-center">
+                                <img src="src/img/Behavioral-Training.png" alt="" class="w-24">
+                            </div>
+                            <p class="text-[15px] text-black text-center pt-3">Behavioural Training</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <div class="px-14">
+                            <div class="bg-[#5A4C9B] rounded-full w-[150px] h-[150px] flex justify-center items-center">
+                                <img src="src/img/Experiential-Training.png" alt="" class="w-24">
+                            </div>
+                            <p class="text-[15px] text-black text-center pt-3">Experiential Training</p>
+                        </div>
+                    </div>
+                    <div class="col-span-1"></div>
+                    <div class="col-span-1"></div>
+                    <div class="col-span-1"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- body ends -->
       
