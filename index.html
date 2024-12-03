@@ -16,6 +16,35 @@
             font-family: "Nunito Sans", sans-serif;
             font-optical-sizing: auto;
         }
+        /* menu starts */
+        /* menu starts */
+        .menu {
+            transition: transform 0.3s ease;
+            transform: translateX(100%);
+        }
+        .menu.active {
+            transform: translateX(0);
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(31, 41, 55, 0.5); /* gray-800 with opacity */
+            transition: transform 0.7s ease, opacity 0.3s ease;
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        .overlay.active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .scrollbar_hide::-webkit-scrollbar {
+            display: none; 
+        }
+        /* menu ends */
+        /* menu ends */
         /* card */
         .hidden-text {
             position: absolute;
@@ -44,26 +73,73 @@
 </head>
 <body>
     <!-- Header starts -->
-    <header class="h-20 bg-gray-50">
-        
+    <header class="py-1">
+        <div class="container mx-auto px-2 md:pl-2 md:pr-6 my-2">
+            <nav class="flex items-center justify-between">
+                <a href="/" class="flex items-center">
+                    <img src="./src/img/desun-academy-logo-new.jpg" alt="Logo" class="w-28 md:w-40 logo">
+                </a>
+                <div class="flex space-x-4 md:space-x-10">
+                    <ul class="xl:flex space-x-5 mt-1.5 hidden">
+                        <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">ABOUT US</li>
+                        <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">THE ACADEMY</li>
+                        <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">COURSES</li>
+                        <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">ADMISSION 2023</li>
+                        <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">FACILITY</li>
+                        <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">PLACEMENT</li>
+                        <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">CONTACT US</li>
+                    </ul>
+                    <button id="hamburger" class=" focus:outline-none">
+                        <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>  
+        </div>
     </header>
+    <!-- mobile -->
+    <div id="overlay" class="overlay z-[60]"></div>
+    <div id="menu" class="menu fixed top-0 right-0 w-4/5 md:w-2/5 h-full bg-white shadow-lg z-[100] overflow-y-scroll scrollbar_hide">
+        <div class="flex justify-end p-4 absolute right-0">
+            <button id="close" class="focus:outline-none">
+                <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <nav class="p-4 mt-14 md:mt-20">
+            <div class="flex flex-col space-y-6 p-5 text-base">
+                <ul class="space-y-5">
+                    <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">ABOUT US</li>
+                    <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">THE ACADEMY</li>
+                    <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">COURSES</li>
+                    <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">ADMISSION 2023</li>
+                    <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">FACILITY</li>
+                    <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">PLACEMENT</li>
+                    <li class="text-[15px] font-extrabold text-[#084d89] hover:text-[#ff5718] cursor-pointer">CONTACT US</li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- mobile ends -->
     <!-- Header ends -->
     <!-- Hero starts -->
     <section class="relative w-full bg-cover bg-top" style="background-image: url('src/img/hero.jpg');">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative z-10 flex items-center justify-center w-full h-full">
-            <div class="py-28">
-                <h1 class="text-5xl font-extrabold text-white mb-3">SKILL ACADEMY</h1>
-                <hr class="w-28 h-1 mx-auto mb-3 bg-[#f7a703] border-0 rounded mt-5">
-                <p class="text-center text-base font-normal text-white pt-4">Home / Skill Academy</p>
+            <div class="py-10 xl:py-28">
+                <h1 class="text-xl xl:text-5xl font-extrabold text-white mb-3">SKILL ACADEMY</h1>
+                <hr class="w-12 xl:w-28 h-0.5 xl:h-1 mx-auto mb-3 bg-[#f7a703] border-0 rounded xl:mt-5">
+                <p class="text-center text-base font-normal text-white pt-2 xl:pt-4">Home / Skill Academy</p>
             </div>
         </div>
     </section>
     <!-- Hero endss -->
     <!-- body starts -->
-    <div class="container mx-auto px-32 py-8">
+    <div class="container mx-auto px-5 xl:px-32 py-8">
         <p class="text-[15px] text-black leading-7">The Academy has a mission to bridge the skill gap for its own students and eligible youth of the community. As the institute will focus on professional skill development, digital literacy, and a problem-solving mindset along with effective communication skills for its own students; the academy develops need-based skill gap programmes & provides diverse skill-sets to get each student ready for the best kind of employment.</p>
-        <p class="text-[30px] text-[#f77403] font-bold mt-10">FOCUS SKILL AREAS</p>
+        <p class="text-2xl xl:text-[30px] text-[#f77403] font-bold mt-10">FOCUS SKILL AREAS</p>
         <hr class="w-16 h-[3px] mb-3 bg-[#084d89] border-0 rounded">
         <p class="text-[24px] text-[#084d89] font-bold mt-10">Communication Skill</p>
         <hr class="w-16 h-[3px] mb-3 bg-[#f7a703] border-0 rounded">
@@ -76,10 +152,10 @@
         <p class="text-[15px] text-black leading-7">Managing in today's fast & constantly changing environment demands specific management skills & attributes to achieve success. Our training will develop a proactive customer-focused orientation. Learn to lead with vision, motivate & empower with passion, facilitate effective communication & delegate with clarity to individual and teams. The core focus will revolve core management behaviours and techniques to deliver results.</p>
         <!-- Industry starts -->
         <div>
-            <p class="text-[30px] text-[#f77403] font-bold mt-10">INDUSTRY READY SKILL</p>
+            <p class="text-2xl xl:text-[30px] text-[#f77403] font-bold mt-10">INDUSTRY READY SKILL</p>
             <hr class="w-16 h-[3px] mb-3 bg-[#084d89] border-0 rounded">
             <div class="grid grid-cols-3 gap-8 mt-14">
-                <div class="col-span-1 card overflow-clip">
+                <div class="col-span-3 xl:col-span-1 card overflow-clip">
                     <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/time-management.jpg');">
                         <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
                         <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
@@ -95,7 +171,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-span-1 card overflow-clip">
+                <div class="col-span-3 xl:col-span-1 card overflow-clip">
                     <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/Conflict-Resolution.jpg');">
                         <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
                         <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
@@ -111,7 +187,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-span-1 card overflow-clip">
+                <div class="col-span-3 xl:col-span-1 card overflow-clip">
                     <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/Managing-Change.jpg');">
                         <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
                         <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
@@ -127,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-span-1 card overflow-clip">
+                <div class="col-span-3 xl:col-span-1 card overflow-clip">
                     <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/Presenting.jpg');">
                         <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
                         <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
@@ -143,7 +219,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-span-1 card overflow-clip">
+                <div class="col-span-3 xl:col-span-1 card overflow-clip">
                     <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/Emotional-Intelligence.jpg');">
                         <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
                         <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
@@ -159,7 +235,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-span-1 card overflow-clip">
+                <div class="col-span-3 xl:col-span-1 card overflow-clip">
                     <div class="relative w-full bg-cover bg-top overflow-hidden" style="background-image: url('src/img/Complex-Problem-Solving.jpg');">
                         <div class="absolute inset-0 bg-black opacity-50 card-overlay"></div>
                         <div class="front-txt relative z-10 flex items-center justify-center w-full h-full">
@@ -175,21 +251,15 @@
                         </div>
                     </div>
                 </div>
-                
-                
-                
-                
-                
-                <div class="col-span-1"></div>
             </div>
         </div>
         <!-- Industry ends -->
         <div>
-            <p class="text-[30px] text-[#f77403] font-bold mt-10">CORE EMPLOYABILITY SKILLS</p>
+            <p class="text-2xl xl:text-[30px] text-[#f77403] font-bold mt-10">CORE EMPLOYABILITY SKILLS</p>
             <hr class="w-16 h-[3px] mb-3 bg-[#084d89] border-0 rounded">
             <div class="py-6">
                 <div class="grid grid-cols-4 gap-8">
-                    <div class="col-span-1 flex justify-center">
+                    <div class="col-span-2 xl:col-span-1 flex justify-center">
                         <div class="px-14">
                             <div class="bg-[#FA911E] rounded-full w-[150px] h-[150px] flex justify-center items-center">
                                 <img src="src/img/Sales-Training.png" alt="" class="w-24">
@@ -197,7 +267,7 @@
                             <p class="text-[15px] text-black text-center pt-3">Sales Training</p>
                         </div>
                     </div>
-                    <div class="col-span-1 flex justify-center">
+                    <div class="col-span-2 xl:col-span-1 flex justify-center">
                         <div class="px-14">
                             <div class="bg-[#01AAAD] rounded-full w-[150px] h-[150px] flex justify-center items-center">
                                 <img src="src/img/Service-Training.png" alt="" class="w-24">
@@ -205,7 +275,7 @@
                             <p class="text-[15px] text-black text-center pt-3">Service Training</p>
                         </div>
                     </div>
-                    <div class="col-span-1 flex justify-center">
+                    <div class="col-span-2 xl:col-span-1 flex justify-center">
                         <div class="px-14">
                             <div class="bg-[#93268F] rounded-full w-[150px] h-[150px] flex justify-center items-center">
                                 <img src="src/img/Soft-Skills-Training.png" alt="" class="w-24">
@@ -213,7 +283,7 @@
                             <p class="text-[15px] text-black text-center pt-3">Soft Skills Training</p>
                         </div>
                     </div>
-                    <div class="col-span-1 flex justify-center">
+                    <div class="col-span-2 xl:col-span-1 flex justify-center">
                         <div class="px-14">
                             <div class="bg-[#ED1E79] rounded-full w-[150px] h-[150px] flex justify-center items-center">
                                 <img src="src/img/Product-Training.png" alt="" class="w-24">
@@ -221,7 +291,7 @@
                             <p class="text-[15px] text-black text-center pt-3">Product Training</p>
                         </div>
                     </div>
-                    <div class="col-span-1 flex justify-center">
+                    <div class="col-span-2 xl:col-span-1 flex justify-center">
                         <div class="px-14">
                             <div class="bg-[#545F9D] rounded-full w-[150px] h-[150px] flex justify-center items-center">
                                 <img src="src/img/Process-Training.png" alt="" class="w-24">
@@ -229,7 +299,7 @@
                             <p class="text-[15px] text-black text-center pt-3">Process Training</p>
                         </div>
                     </div>
-                    <div class="col-span-1 flex justify-center">
+                    <div class="col-span-2 xl:col-span-1 flex justify-center">
                         <div class="px-14">
                             <div class="bg-[#DB3E6D] rounded-full w-[150px] h-[150px] flex justify-center items-center">
                                 <img src="src/img/Leadeship-Training.png" alt="" class="w-24">
@@ -237,7 +307,7 @@
                             <p class="text-[15px] text-black text-center pt-3">Leadership Training</p>
                         </div>
                     </div>
-                    <div class="col-span-1 flex justify-center">
+                    <div class="col-span-2 xl:col-span-1 flex justify-center">
                         <div class="px-14">
                             <div class="bg-[#FCB30F] rounded-full w-[150px] h-[150px] flex justify-center items-center">
                                 <img src="src/img/Behavioral-Training.png" alt="" class="w-24">
@@ -245,7 +315,7 @@
                             <p class="text-[15px] text-black text-center pt-3">Behavioural Training</p>
                         </div>
                     </div>
-                    <div class="col-span-1 flex justify-center">
+                    <div class="col-span-2 xl:col-span-1 flex justify-center">
                         <div class="px-14">
                             <div class="bg-[#5A4C9B] rounded-full w-[150px] h-[150px] flex justify-center items-center">
                                 <img src="src/img/Experiential-Training.png" alt="" class="w-24">
@@ -253,14 +323,158 @@
                             <p class="text-[15px] text-black text-center pt-3">Experiential Training</p>
                         </div>
                     </div>
-                    <div class="col-span-1"></div>
-                    <div class="col-span-1"></div>
-                    <div class="col-span-1"></div>
                 </div>
             </div>
         </div>
     </div>
     <!-- body ends -->
-      
+    <!-- footer starts -->
+    <footer class="py-5 bg-gray-50">
+        <div class="container">
+            
+        </div>
+        <div class="container mx-auto px-5 md:px-20 py-8">
+            <div class="grid grid-cols-5">
+                <div class="col-span-5 md:col-span-2">
+                <a href="#" class="group shrink-0 relative block h-48 w-48 self-start overflow-hidden rounded-lg bg-gray-50 shadow-md md:h-24 md:w-24 lg:h-32 lg:w-32 mb-4 z-0">
+                    <img src="./src/img/desun-academy-logo-new.jpg" loading="lazy" alt="logo" class="p-4 absolute inset-0 h-48 w-48 md:h-full md:w-full object-cover object-center">
+                </a>
+                <span class="text-xs font-light text-primary-orange underline">DESUN ACADEMY</span>
+                <p class="text-sm font-normal text-gray-700 pr-0 pt-2 md:pr-8"><span class="text-primary-gray font-semibold">A unit of Desun Hospital</p>
+                <p class="text-sm font-normal text-gray-700 pr-0 pt-2 md:pr-8"><span class="text-primary-gray font-semibold">The Adjacent Campus of Desun Hospital</p>
+                <a href="mailto:info@desunacademy.com" class="text-sm font-medium text-primary-orange pr-0 pt-2 md:pr-8 block">Email: info@desunacademy.com</a>
+                <a href="tel:+917821962914" class="text-sm font-medium text-primary-gray pr-0 pt-2 md:pr-8 block">Call: 90 5171 5171</a>
+                </div>
+                <div class="col-span-5 md:col-span-1">
+                    <h2 class="text-xl font-semibold text-primary-gray pb-3">Courses</h2>
+                    <ul class="pl-0">
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            Bachelor in Hospital Administration
+                        </a>
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            Master of Hospital Administration
+                        </a>
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            B.Sc - Operation Theatre Technology
+                        </a>
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            B.Sc - Critical Care Technology
+                        </a>
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            B.Sc - Perfusion Technology
+                        </a>
+                    </ul>
+                </div>
+                <div class="col-span-5 md:col-span-1">
+                    <h2 class="text-xl font-semibold text-primary-gray pb-3">Quick Links</h2>
+                    <ul class="pl-0">
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            Home
+                        </a>
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            About Us
+                        </a>
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            Why Desun Academy
+                        </a>
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            Admission 2023
+                        </a>
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            Facility
+                        </a>
+                    </ul>
+                </div>
+                <div class="col-span-5 md:col-span-1">
+                    <h2 class="text-xl font-semibold text-primary-gray pb-3">Social</h2>
+                    <ul class="pl-0">
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            Faculty Login
+                        </a>
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            Student Login
+                        </a>
+                        <a href="#" class="text-sm text-primary-gray font-normal flex py-1.5 hover:underline hover:font-medium hover:pl-4 transition-all duration-200 cursor-pointer">
+                            <svg class="w-5 h-5 text-primary-orange" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+                            </svg>
+                            Desun Nursing School
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer ends -->
+    <script>
+     // Menu
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    const close = document.getElementById('close');
+    const overlay = document.getElementById('overlay');
+
+    hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
+
+    close.addEventListener('click', () => {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+    // subMenus
+    document.querySelectorAll('.dropdown-toggle').forEach(container => {
+        const dropdownArrow = container.querySelector('.dropdown-arrow');
+        const childMenu = container.nextElementSibling; 
+
+        // Toggle dropdown on SVG
+        dropdownArrow.addEventListener('click', (event) => {
+            event.stopPropagation(); 
+            childMenu.classList.toggle('hidden');
+            dropdownArrow.classList.toggle('rotate-180');
+        });
+    });
+    </script>
 </body>
 </html>
